@@ -37,10 +37,10 @@ namespace Calculadora
             float? t = theValue; 
             if (t == null)
             {
-               if(decimalType == false)
-                 t = value;
-               else
-                 t = value / 10; 
+                if(decimalType == false)
+                    t = value;
+                else
+                    t += value / (int)Math.Pow(10, getDecimalCount((float)t) + 1);
             }
             else
             {
@@ -52,16 +52,16 @@ namespace Calculadora
                 }
                else
                 {
-                    t += value / 10; 
+                    t += value / (int)Math.Pow(10, (getDecimalCount((float)t)) + 1)  ; 
                 }
             }
             textBox1.Text = t.ToString();
-            decimalType = false; 
             return t; 
 
         }
         private void typeFunction(object sender, EventArgs args)
         {
+            decimalType = false;
             if (firstValue != null && calcType != null)
             {
                 secondValue = null; 
@@ -94,14 +94,33 @@ namespace Calculadora
             decimalType = false; 
             textBox1.Text = ""; 
         }
+        public int GetDecimalPart(float number)
+        {
+            var decimalNumber = Convert.ToDecimal(number);
+            int decimalPart = int.Parse((decimalNumber % 1).ToString().Replace("0.", ""));
 
+            return decimalPart;
+        }
         private void backFunction(object o, EventArgs args)
         {
             if (calcType == null)
             {
                 if(firstValue != null)
                 {
+                    char[] c = firstValue.ToString().ToCharArray();
+                    if (c.Length == 1) { 
+                        clearFunction(o, args);
+                    }else if (c.Length > 1)
+                    {
+                        firstValue.ToString().Remove(0, 1);
+                        textBox1.Text = firstValue.ToString() + "Hola mundo";
+                        
 
+                    }
+                    else
+                    {
+                        textBox1.Text = "Llego al else"; 
+                    }
                 }
             }
             else
@@ -123,6 +142,27 @@ namespace Calculadora
                     textBox1.Text += "."; 
             }    
         }
+
+        private static int getDecimalCount(float value)
+        {
+            bool start = false;
+            int count = 0;
+            foreach (var s in value.ToString())
+            {
+                if (s == '.')
+                {
+                    start = true;
+                }
+                else if (start)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        
 
         private void totalFunction(object o, EventArgs args)
         {
