@@ -46,13 +46,16 @@
             this.decimalBtn = new System.Windows.Forms.Button();
             this.multiBtn = new System.Windows.Forms.Button();
             this.divBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
+            this.closeEcBtn = new System.Windows.Forms.Button();
+            this.openEcBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // num7
             // 
-            this.num7.Location = new System.Drawing.Point(28, 194);
+            this.num7.Location = new System.Drawing.Point(28, 148);
             this.num7.Name = "num7";
-            this.num7.Size = new System.Drawing.Size(75, 23);
+            this.num7.Size = new System.Drawing.Size(75, 35);
             this.num7.TabIndex = 0;
             this.num7.Text = "7";
             this.num7.UseVisualStyleBackColor = true;
@@ -60,9 +63,9 @@
             // 
             // num8
             // 
-            this.num8.Location = new System.Drawing.Point(109, 194);
+            this.num8.Location = new System.Drawing.Point(109, 148);
             this.num8.Name = "num8";
-            this.num8.Size = new System.Drawing.Size(75, 23);
+            this.num8.Size = new System.Drawing.Size(75, 35);
             this.num8.TabIndex = 1;
             this.num8.Text = "8";
             this.num8.UseVisualStyleBackColor = true;
@@ -70,9 +73,9 @@
             // 
             // num9
             // 
-            this.num9.Location = new System.Drawing.Point(190, 194);
+            this.num9.Location = new System.Drawing.Point(190, 148);
             this.num9.Name = "num9";
-            this.num9.Size = new System.Drawing.Size(75, 23);
+            this.num9.Size = new System.Drawing.Size(75, 35);
             this.num9.TabIndex = 2;
             this.num9.Text = "9";
             this.num9.UseVisualStyleBackColor = true;
@@ -80,9 +83,9 @@
             // 
             // num4
             // 
-            this.num4.Location = new System.Drawing.Point(28, 247);
+            this.num4.Location = new System.Drawing.Point(28, 189);
             this.num4.Name = "num4";
-            this.num4.Size = new System.Drawing.Size(75, 23);
+            this.num4.Size = new System.Drawing.Size(75, 36);
             this.num4.TabIndex = 3;
             this.num4.Text = "4";
             this.num4.UseVisualStyleBackColor = true;
@@ -90,9 +93,9 @@
             // 
             // num5
             // 
-            this.num5.Location = new System.Drawing.Point(109, 247);
+            this.num5.Location = new System.Drawing.Point(109, 189);
             this.num5.Name = "num5";
-            this.num5.Size = new System.Drawing.Size(75, 23);
+            this.num5.Size = new System.Drawing.Size(75, 36);
             this.num5.TabIndex = 4;
             this.num5.Text = "5";
             this.num5.UseVisualStyleBackColor = true;
@@ -100,9 +103,9 @@
             // 
             // num6
             // 
-            this.num6.Location = new System.Drawing.Point(190, 247);
+            this.num6.Location = new System.Drawing.Point(190, 189);
             this.num6.Name = "num6";
-            this.num6.Size = new System.Drawing.Size(75, 23);
+            this.num6.Size = new System.Drawing.Size(75, 36);
             this.num6.TabIndex = 5;
             this.num6.Text = "6";
             this.num6.UseVisualStyleBackColor = true;
@@ -110,9 +113,9 @@
             // 
             // num1
             // 
-            this.num1.Location = new System.Drawing.Point(28, 300);
+            this.num1.Location = new System.Drawing.Point(28, 231);
             this.num1.Name = "num1";
-            this.num1.Size = new System.Drawing.Size(75, 23);
+            this.num1.Size = new System.Drawing.Size(75, 37);
             this.num1.TabIndex = 6;
             this.num1.Text = "1";
             this.num1.UseVisualStyleBackColor = true;
@@ -120,9 +123,9 @@
             // 
             // num2
             // 
-            this.num2.Location = new System.Drawing.Point(109, 300);
+            this.num2.Location = new System.Drawing.Point(109, 231);
             this.num2.Name = "num2";
-            this.num2.Size = new System.Drawing.Size(75, 23);
+            this.num2.Size = new System.Drawing.Size(75, 37);
             this.num2.TabIndex = 7;
             this.num2.Text = "2";
             this.num2.UseVisualStyleBackColor = true;
@@ -130,9 +133,9 @@
             // 
             // num3
             // 
-            this.num3.Location = new System.Drawing.Point(190, 300);
+            this.num3.Location = new System.Drawing.Point(190, 231);
             this.num3.Name = "num3";
-            this.num3.Size = new System.Drawing.Size(75, 23);
+            this.num3.Size = new System.Drawing.Size(75, 37);
             this.num3.TabIndex = 8;
             this.num3.Text = "3";
             this.num3.UseVisualStyleBackColor = true;
@@ -149,9 +152,9 @@
             // 
             // equalBtn
             // 
-            this.equalBtn.Location = new System.Drawing.Point(190, 344);
+            this.equalBtn.Location = new System.Drawing.Point(190, 274);
             this.equalBtn.Name = "equalBtn";
-            this.equalBtn.Size = new System.Drawing.Size(75, 23);
+            this.equalBtn.Size = new System.Drawing.Size(75, 37);
             this.equalBtn.TabIndex = 11;
             this.equalBtn.Text = "=";
             this.equalBtn.UseVisualStyleBackColor = true;
@@ -159,9 +162,9 @@
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(280, 344);
+            this.addBtn.Location = new System.Drawing.Point(280, 274);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(75, 23);
+            this.addBtn.Size = new System.Drawing.Size(75, 37);
             this.addBtn.TabIndex = 12;
             this.addBtn.Text = "+";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -169,9 +172,9 @@
             // 
             // subBtn
             // 
-            this.subBtn.Location = new System.Drawing.Point(280, 300);
+            this.subBtn.Location = new System.Drawing.Point(280, 231);
             this.subBtn.Name = "subBtn";
-            this.subBtn.Size = new System.Drawing.Size(75, 23);
+            this.subBtn.Size = new System.Drawing.Size(75, 37);
             this.subBtn.TabIndex = 13;
             this.subBtn.Text = "-";
             this.subBtn.UseVisualStyleBackColor = true;
@@ -179,9 +182,9 @@
             // 
             // clearBtn
             // 
-            this.clearBtn.Location = new System.Drawing.Point(280, 155);
+            this.clearBtn.Location = new System.Drawing.Point(280, 106);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.Size = new System.Drawing.Size(75, 36);
             this.clearBtn.TabIndex = 14;
             this.clearBtn.Text = "C";
             this.clearBtn.UseVisualStyleBackColor = true;
@@ -189,9 +192,9 @@
             // 
             // num0
             // 
-            this.num0.Location = new System.Drawing.Point(28, 344);
+            this.num0.Location = new System.Drawing.Point(28, 274);
             this.num0.Name = "num0";
-            this.num0.Size = new System.Drawing.Size(75, 23);
+            this.num0.Size = new System.Drawing.Size(75, 37);
             this.num0.TabIndex = 15;
             this.num0.Text = "0";
             this.num0.UseVisualStyleBackColor = true;
@@ -199,9 +202,9 @@
             // 
             // decimalBtn
             // 
-            this.decimalBtn.Location = new System.Drawing.Point(109, 344);
+            this.decimalBtn.Location = new System.Drawing.Point(109, 274);
             this.decimalBtn.Name = "decimalBtn";
-            this.decimalBtn.Size = new System.Drawing.Size(75, 23);
+            this.decimalBtn.Size = new System.Drawing.Size(75, 37);
             this.decimalBtn.TabIndex = 16;
             this.decimalBtn.Text = ".";
             this.decimalBtn.UseVisualStyleBackColor = true;
@@ -209,9 +212,9 @@
             // 
             // multiBtn
             // 
-            this.multiBtn.Location = new System.Drawing.Point(280, 247);
+            this.multiBtn.Location = new System.Drawing.Point(280, 189);
             this.multiBtn.Name = "multiBtn";
-            this.multiBtn.Size = new System.Drawing.Size(75, 23);
+            this.multiBtn.Size = new System.Drawing.Size(75, 36);
             this.multiBtn.TabIndex = 17;
             this.multiBtn.Text = "*";
             this.multiBtn.UseVisualStyleBackColor = true;
@@ -219,19 +222,51 @@
             // 
             // divBtn
             // 
-            this.divBtn.Location = new System.Drawing.Point(280, 194);
+            this.divBtn.Location = new System.Drawing.Point(280, 148);
             this.divBtn.Name = "divBtn";
-            this.divBtn.Size = new System.Drawing.Size(75, 23);
+            this.divBtn.Size = new System.Drawing.Size(75, 35);
             this.divBtn.TabIndex = 18;
             this.divBtn.Text = "/";
             this.divBtn.UseVisualStyleBackColor = true;
             this.divBtn.Click += new System.EventHandler(this.typeFunction);
             // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(190, 106);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(75, 36);
+            this.backBtn.TabIndex = 19;
+            this.backBtn.Text = "Atras";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backFunction);
+            // 
+            // closeEcBtn
+            // 
+            this.closeEcBtn.Location = new System.Drawing.Point(109, 106);
+            this.closeEcBtn.Name = "closeEcBtn";
+            this.closeEcBtn.Size = new System.Drawing.Size(75, 36);
+            this.closeEcBtn.TabIndex = 20;
+            this.closeEcBtn.Text = ")";
+            this.closeEcBtn.UseVisualStyleBackColor = true;
+            // 
+            // openEcBtn
+            // 
+            this.openEcBtn.Location = new System.Drawing.Point(28, 106);
+            this.openEcBtn.Name = "openEcBtn";
+            this.openEcBtn.Size = new System.Drawing.Size(75, 36);
+            this.openEcBtn.TabIndex = 21;
+            this.openEcBtn.Text = "(";
+            this.openEcBtn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 400);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(385, 335);
+            this.Controls.Add(this.openEcBtn);
+            this.Controls.Add(this.closeEcBtn);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.divBtn);
             this.Controls.Add(this.multiBtn);
             this.Controls.Add(this.decimalBtn);
@@ -278,5 +313,8 @@
         private Button decimalBtn;
         private Button multiBtn;
         private Button divBtn;
+        private Button backBtn;
+        private Button closeEcBtn;
+        private Button openEcBtn;
     }
 }

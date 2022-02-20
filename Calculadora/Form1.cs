@@ -1,3 +1,5 @@
+
+
 namespace Calculadora
 {
     public  partial class Form1 : Form
@@ -93,6 +95,23 @@ namespace Calculadora
             textBox1.Text = ""; 
         }
 
+        private void backFunction(object o, EventArgs args)
+        {
+            if (calcType == null)
+            {
+                if(firstValue != null)
+                {
+
+                }
+            }
+            else
+            {
+                if(secondValue != null)
+                {
+
+                }
+            }
+        }
         private void decimalFunction(object o, EventArgs args)
         {
             if(decimalType == false)
@@ -134,5 +153,7 @@ namespace Calculadora
 
             }
         }
+
+       
     }
 }
