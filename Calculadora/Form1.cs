@@ -7,26 +7,18 @@ namespace Calculadora
         private float? firstValue, secondValue;
         private char? calcType;
         private bool decimalType = false;
-        public Form1()
-        {
+        public Form1(){
             InitializeComponent();
         }
 
-        private void setNum(object sender, EventArgs args)
-        {
+        private void setNum(object sender, EventArgs args){
             float val;
-             
             Button btn = (Button)sender;
-            if (float.TryParse(btn.Text, out val))
-            {
-                
-                if (calcType == null)
-                {
-                   
+            if (float.TryParse(btn.Text, out val)) {
+                if (calcType == null){
                   firstValue = addValues(val, firstValue); 
                 }
-                else
-                {
+                else{
                    secondValue =addValues(val, secondValue);
                 }
             }
@@ -35,25 +27,20 @@ namespace Calculadora
         {
 
             float? t = theValue; 
-            if (t == null)
-            {
+            if (t == null){
                 if(decimalType == false)
                     t = value;
                 else
                     t += value / (int)Math.Pow(10, getDecimalCount((float)t) + 1);
             }
-            else
-            {
-                
-                if (decimalType == false)
-                {
+            else{
+                if (decimalType == false){
                     t *= 10;
                     t += value;
                 }
-               else
-                {
+               else{
                     t += value / (int)Math.Pow(10, (getDecimalCount((float)t)) + 1)  ; 
-                }
+               }
             }
             textBox1.Text = t.ToString();
             return t; 
@@ -62,13 +49,11 @@ namespace Calculadora
         private void typeFunction(object sender, EventArgs args)
         {
             decimalType = false;
-            if (firstValue != null && calcType != null)
-            {
+            if (firstValue != null && calcType != null){
                 secondValue = null; 
             }
             Button btn = (Button )(sender);
-            if (firstValue != null)
-            {
+            if (firstValue != null){
                 switch (btn.Text)
                 {
                     case "+":
@@ -103,60 +88,47 @@ namespace Calculadora
         }
         private void backFunction(object o, EventArgs args)
         {
-            if (calcType == null)
-            {
+            if (calcType == null){
                 firstValue = evaluationBackFunction(firstValue); 
             }
-            else
-            {
+            else{
                 secondValue= evaluationBackFunction(secondValue);
             }
         }
         private float? evaluationBackFunction(float? temp)
         {
-            if (temp != null)
-            {
+            if (temp != null){
                 char[] c = ((float)temp).ToString().ToCharArray();
-                if (c.Length == 1)
-                {
+                if (c.Length == 1){
                     firstValue = secondValue = calcType = null;
                     decimalType = false;
                     textBox1.Text = "";
+                    temp = null; 
                 }
-                else if (c.Length > 1)
-                {
-                    if (decimalType == true)
-                    {
-                        //string t = ((float)firstValue).ToString().Remove(((float)firstValue).ToString().Length - 1 );
-                        //firstValue = float.Parse(t);  
-
+                else if (c.Length > 1){
+                    if (decimalType == true){
                         int d = GetDecimalPart(temp) / 10;
                         int i = (int)temp;
                         float f = i + ((d / (float)Math.Pow(10, d.ToString().Length)));
                         temp = f;
                         textBox1.Text = temp.ToString();
 
-                        if (GetDecimalPart(temp) == 0)
-                        {
+                        if (GetDecimalPart(temp) == 0){
                             decimalType = false;
                         }
-                    }
-                    else
-                    {
+                    }else{
                         int i = (int)temp;
                         i /= 10;
                         temp = i;
                         textBox1.Text = temp.ToString();
                     }
-
                 }
             }
             return temp; 
         }
         private void decimalFunction(object o, EventArgs args)
         {
-            if(decimalType == false)
-            {
+            if(decimalType == false){
                 decimalType = true;
                 if (firstValue == null)
                     textBox1.Text = "0.";
@@ -169,14 +141,11 @@ namespace Calculadora
         {
             bool start = false;
             int count = 0;
-            foreach (var s in value.ToString())
-            {
-                if (s == '.')
-                {
+            foreach (var s in value.ToString()){
+                if (s == '.'){
                     start = true;
                 }
-                else if (start)
-                {
+                else if (start){
                     count++;
                 }
             }
@@ -189,10 +158,8 @@ namespace Calculadora
         private void totalFunction(object o, EventArgs args)
         {
             float? total = 0; 
-            if (firstValue != null && secondValue != null && calcType != null)
-            {
-                switch (calcType)
-                {
+            if (firstValue != null && secondValue != null && calcType != null){
+                switch (calcType){
                     case '+':
                         total = (firstValue + secondValue);
                         textBox1.Text = total.ToString();
@@ -212,7 +179,6 @@ namespace Calculadora
 
                 }
                 firstValue = total; 
-
             }
         }
 
