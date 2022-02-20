@@ -6,7 +6,7 @@ namespace Calculadora
     {
         private float? firstValue, secondValue;
         private char? calcType;
-        private bool? decimalType = false;
+        private bool decimalType = false;
         public Form1()
         {
             InitializeComponent();
@@ -94,7 +94,7 @@ namespace Calculadora
             decimalType = false; 
             textBox1.Text = ""; 
         }
-        public int GetDecimalPart(float number)
+        public int GetDecimalPart(float? number)
         {
             var decimalNumber = Convert.ToDecimal(number);
             int decimalPart = int.Parse((decimalNumber % 1).ToString().Replace("0.", ""));
@@ -105,31 +105,53 @@ namespace Calculadora
         {
             if (calcType == null)
             {
-                if(firstValue != null)
-                {
-                    char[] c = firstValue.ToString().ToCharArray();
-                    if (c.Length == 1) { 
-                        clearFunction(o, args);
-                    }else if (c.Length > 1)
-                    {
-                        firstValue.ToString().Remove(0, 1);
-                        textBox1.Text = firstValue.ToString() + "Hola mundo";
-                        
-
-                    }
-                    else
-                    {
-                        textBox1.Text = "Llego al else"; 
-                    }
-                }
+                firstValue = evaluationBackFunction(firstValue); 
             }
             else
             {
-                if(secondValue != null)
+                secondValue= evaluationBackFunction(secondValue);
+            }
+        }
+        private float? evaluationBackFunction(float? temp)
+        {
+            if (temp != null)
+            {
+                char[] c = ((float)temp).ToString().ToCharArray();
+                if (c.Length == 1)
                 {
+                    firstValue = secondValue = calcType = null;
+                    decimalType = false;
+                    textBox1.Text = "";
+                }
+                else if (c.Length > 1)
+                {
+                    if (decimalType == true)
+                    {
+                        //string t = ((float)firstValue).ToString().Remove(((float)firstValue).ToString().Length - 1 );
+                        //firstValue = float.Parse(t);  
+
+                        int d = GetDecimalPart(temp) / 10;
+                        int i = (int)temp;
+                        float f = i + ((d / (float)Math.Pow(10, d.ToString().Length)));
+                        temp = f;
+                        textBox1.Text = temp.ToString();
+
+                        if (GetDecimalPart(temp) == 0)
+                        {
+                            decimalType = false;
+                        }
+                    }
+                    else
+                    {
+                        int i = (int)temp;
+                        i /= 10;
+                        temp = i;
+                        textBox1.Text = temp.ToString();
+                    }
 
                 }
             }
+            return temp; 
         }
         private void decimalFunction(object o, EventArgs args)
         {
